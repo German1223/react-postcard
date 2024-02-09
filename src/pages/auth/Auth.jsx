@@ -10,7 +10,7 @@ const Auth = ({ setIsAuth }) => {
     const redirectAction = () => {
         if (inputRef !== null) {
             if (!inputRef.current.value.length) return;
-            if (inputRef.current.value === word) {
+            if (inputRef.current.value.toLowerCase() === word.toLowerCase()) {
                 setIsAuth(true);
             } else {
                 alert("Неправильно, попробуй еще)");
@@ -20,9 +20,12 @@ const Auth = ({ setIsAuth }) => {
 
     return (
         <div className="auth_cont">
-            <div className="title">Text</div>
+            <div className="title q_cont">
+                Для продолжения введи смешное слово, которое превратилось в твое
+                милое (как по мне) прозвище, которое не совсем тебе нравится)
+            </div>
             <input ref={inputRef} type="text" className="auth_input" />
-            <button onClick={redirectAction}>Login</button>
+            <button onClick={redirectAction}>Продолжить</button>
         </div>
     );
 };

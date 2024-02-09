@@ -18,8 +18,8 @@
     max-width: 480px;
     margin: 20px;
 }
-img {
-    /* max-width: 480px; */
+.main_img {
+    max-width: 480px;
     height: 460px;
     width: 100%;
     margin: 20px;
@@ -38,11 +38,17 @@ img {
     align-items: center;
 }
 
+.true_butt_cont {
+    /* width: 200px; */
+}
+
 
 
 .container_dynamic_button {
     position: absolute;
-    transition: 0.3s all
+    transition: 0.3s all;
+    transform: translate(-50%, -50%);
+    
 }
 
 .dynamic_button {
@@ -53,7 +59,7 @@ img {
 }
 
 .dynamic_button.true {
-    background-color: #00fc65
+    background-color: #00fc65;
 }
 .dynamic_button.false {
     background-color: #f7020f

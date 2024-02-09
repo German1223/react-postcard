@@ -5,6 +5,7 @@
     flex-direction: column;
     height: 100vh;
     padding: 0 50px;
+    gap: 10px;
 }
 
 .auth_input {
@@ -18,4 +19,9 @@
     outline: none;
     border: none;
     border-radius: 5px;
+}
+
+.q_cont {
+    max-width: 600px;
+    text-align: center;
 }
