@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./Main.css";
 
 const Main = () => {
-    const [position, setPosition] = useState({ top: `86%`, left: `50%` });
+    const [position, setPosition] = useState({ top: `86%`, left: `50%`, transform: 'translate(-50%, -50%)' });
     const [size, setSize] = useState({ width: 100, height: 50, fontSize: 20 });
     const [imagePath, setImagePath] = useState("/img/first.gif");
     const [isAgree, setIsAgree] = useState(false);
@@ -17,14 +17,13 @@ const Main = () => {
             height: size.height + 20,
             fontSize: size.fontSize + 4,
         });
-        setPosition({ top: `${newTop}px`, left: `${newLeft}px` });
+        setPosition({ top: `${newTop}px`, left: `${newLeft}px`, transform: 'none' });
     };
 
     return (
         <div className="main_page">
             <div className="img_container">
                 <img className="main_img" src={imagePath} />
-
                 {!isAgree ? (
                     <div className="title">Ты будешь моей Валентинкой?)</div>
                 ) : (
@@ -59,6 +58,7 @@ const Main = () => {
                         style={{
                             top: position.top,
                             left: position.left,
+                            transform: position.transform  
                         }}
                     >
                         <button
