@@ -8,8 +8,9 @@ const Auth = ({ setIsAuth }) => {
     const inputRef = useRef(null);
 
     const handlerInput = () => {
-        if (inputRef !== null) inputRef.current.value = inputRef.current.value .replace(/\s/g, '')
-    }
+        if (inputRef !== null)
+            inputRef.current.value = inputRef.current.value.replace(/\s/g, "");
+    };
     const redirectAction = () => {
         if (inputRef !== null) {
             if (!inputRef.current.value.length) return;
@@ -27,7 +28,19 @@ const Auth = ({ setIsAuth }) => {
                 Для продолжения введи смешное слово, которое превратилось в твое
                 милое (как по мне) прозвище, которое не совсем тебе нравится)
             </div>
-            <input ref={inputRef} type="text" className="auth_input" onChange={handlerInput}/>
+            <input
+                onKeyDown={(ev) => {
+                    if (ev.key == "Enter") {
+                        if (inputRef !== null && inputRef.current !== null) {
+                            redirectAction();
+                        }
+                    }
+                }}
+                ref={inputRef}
+                type="text"
+                className="auth_input"
+                onChange={handlerInput}
+            />
             <button onClick={redirectAction}>Продолжить</button>
         </div>
     );
